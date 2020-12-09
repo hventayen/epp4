@@ -6,6 +6,18 @@
 
 int IntegerLinkedList::countRecurse (SNode *ptr, int compare) {
   // COMPLETE THIS FOR PROBLEM 3
+  if (ptr == nullptr)
+  {
+    return 0;
+  }
+  if (ptr->elem == compare)
+  {
+    return 1 + countRecurse(ptr->next, compare);
+  }
+  else
+  {
+    return countRecurse(ptr->next, compare);
+  }
 }
 
 void IntegerLinkedList::addFront(int x) {
